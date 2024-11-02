@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Galary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="back.png" id="backbtn">
+
+        <div class="gallery">
+            <div>
+           <span><img src="1.jpg"></span>        
+           <span><img src="2.jpg"></span>        
+           <span><img src="3.jpg"></span>        
+            </div>
+            <div>
+               <span><img src="4.jpg"></span>        
+               <span><img src="5.jpg"></span>        
+           </div>
+           </div>
+
+        <img src="next.png" id="nextbtn">
+
+    </div>
+    
+
+    <script>
+
+  let scrollContainer = document.querySelector(".gallery");
+  let backbtn = document.getElementById("backbtn");
+  let nextbtn = document.getElementById("nextbtn");
+
+  scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    scrollContainer.style.scrollBehavior = "smooth";
+  });
+
+  nextbtn.addEventListener("click", ()=> {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += 900;
+  })
+  backbtn.addEventListener("click", ()=> {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft -= 900;
+  })
+  
+
+    </script>
+    
+</body>
+</html>
